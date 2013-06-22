@@ -1,11 +1,18 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 	<com.zelic.moon.MoonView 
+	    android:id="@+id/back"
 	    android:layout_margin="100dp"
-	    android:layout_width="60dp"
-	    android:layout_height="50dp"/>
+	    android:layout_width="80dp"
+	    android:layout_height="60dp"/>
+	<com.zelic.moon.MoonView 
+	    android:id="@+id/front"
+	    android:alpha="0"
+	    android:layout_margin="100dp"
+	    android:layout_width="80dp"
+	    android:layout_height="60dp"/>
 
-</RelativeLayout>
+</FrameLayout>

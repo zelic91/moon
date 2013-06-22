@@ -16,28 +16,31 @@ public class MoonView extends View {
 
 	int start = 0;
 	int end = 100;
-	int current = 80;
+	int current = 30;
 	int textSize = 40;
 	int backgroundColor = Color.LTGRAY;
 	int foregroundColor = Color.GRAY;
 	int strokeColor = Color.BLACK;
-	boolean displayPercentage = true;
+	boolean displayPercentage = false;
 
 	Paint backgroundPaint = new Paint();
 	Paint foregroundPaint = new Paint();
 	Paint strokePaint = new Paint();
 	Paint textPaint = new Paint();
+	Paint textOutlinePaint = new Paint();
 	Path backgroundPath = new Path();
 	Path foregroundPath = new Path();
 
+	
+
 	public MoonView(Context context, AttributeSet attrs, int defStyle) {
-		this(context);
-		// TODO Auto-generated constructor stub
+		super(context, attrs, defStyle);
+		initPaint();
 	}
 
 	public MoonView(Context context, AttributeSet attrs) {
-		this(context);
-		// TODO Auto-generated constructor stub
+		super(context, attrs);
+		initPaint();
 	}
 
 	public MoonView(Context context) {
@@ -83,10 +86,16 @@ public class MoonView extends View {
 		strokePaint.setStrokeWidth(1);
 		
 		textPaint.setColor(Color.WHITE);
-		textPaint.setFakeBoldText(true);
+		textPaint.setAntiAlias(true);
 		textPaint.setTextAlign(Align.CENTER);
 		textPaint.setTextSize(textSize);
-		textPaint.setShadowLayer(1.5f, 0, 0, Color.BLACK);
+		
+		textOutlinePaint.setTextAlign(Align.CENTER);
+		textOutlinePaint.setAntiAlias(true);
+		textOutlinePaint.setTextSize(textSize);
+		textOutlinePaint.setColor(Color.BLACK);
+		textOutlinePaint.setStyle(Style.STROKE);
+		textOutlinePaint.setStrokeWidth(2);
 	}
 
 	@Override
@@ -124,6 +133,7 @@ public class MoonView extends View {
 		canvas.drawPath(foregroundPath, strokePaint);
 		
 		if (displayPercentage) {
+			canvas.drawText(""+current, width/2, height/2-(textOutlinePaint.descent()+textOutlinePaint.ascent())/2, textOutlinePaint);
 			canvas.drawText(""+current, width/2, height/2-(textPaint.descent()+textPaint.ascent())/2, textPaint);
 		}
 
