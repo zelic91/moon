@@ -63,7 +63,7 @@ public class MoonView extends View {
 		this.foregroundColor = foregroundColor;
 	}
 
-	public void setPercent(int current) {
+	public void setCurrent(int current) {
 		this.current = current;
 	}
 

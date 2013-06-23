@@ -3,16 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
-	<com.zelic.moon.MoonView 
-	    android:id="@+id/back"
-	    android:layout_margin="100dp"
-	    android:layout_width="80dp"
-	    android:layout_height="60dp"/>
-	<com.zelic.moon.MoonView 
-	    android:id="@+id/front"
-	    android:alpha="0"
-	    android:layout_margin="100dp"
-	    android:layout_width="80dp"
-	    android:layout_height="60dp"/>
+
+    <com.zelic.moon.ScrollableWebView
+        android:id="@+id/webView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <com.zelic.moon.MoonView
+        android:id="@+id/back"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_margin="100dp" />
+
+    <com.zelic.moon.MoonView
+        android:id="@+id/front"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_margin="100dp"
+        android:alpha="0" />
+
+    <com.zelic.moon.SubchapterView
+        android:id="@+id/chapter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp" />
 
 </FrameLayout>
